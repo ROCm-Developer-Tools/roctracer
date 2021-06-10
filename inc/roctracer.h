@@ -53,8 +53,8 @@ extern "C" {
 
 ////////////////////////////////////////////////////////////////////////////////
 // Returning library version
-uint32_t roctracer_version_major();
-uint32_t roctracer_version_minor();
+uint32_t roctracer_version_major(void);
+uint32_t roctracer_version_minor(void);
 
 ////////////////////////////////////////////////////////////////////////////////
 // Library errors enumaration
@@ -73,7 +73,7 @@ typedef enum {
 
 ////////////////////////////////////////////////////////////////////////////////
 // Returning the last error
-const char* roctracer_error_string();
+const char* roctracer_error_string(void);
 
 ////////////////////////////////////////////////////////////////////////////////
 // Traced runtime domains
@@ -126,7 +126,7 @@ roctracer_status_t roctracer_disable_op_callback(
     uint32_t op);                                         // API call ID
 roctracer_status_t roctracer_disable_domain_callback(
     activity_domain_t domain);                            // tracing domain
-roctracer_status_t roctracer_disable_callback();
+roctracer_status_t roctracer_disable_callback(void);
 
 ////////////////////////////////////////////////////////////////////////////////
 // Activity API
@@ -236,7 +236,7 @@ roctracer_status_t roctracer_disable_op_activity(
     uint32_t op);                                         // activity op ID
 roctracer_status_t roctracer_disable_domain_activity(
     activity_domain_t domain);                            // tracing domain
-roctracer_status_t roctracer_disable_activity();
+roctracer_status_t roctracer_disable_activity(void);
 
 // Flush available activity records
 roctracer_status_t roctracer_flush_activity_expl(
@@ -251,9 +251,9 @@ roctracer_status_t roctracer_get_timestamp(
     uint64_t* timestamp);                                 // [out] return timestamp
 
 // Load/Unload methods
-bool roctracer_load();
-void roctracer_unload();
-void roctracer_flush_buf();
+bool roctracer_load(void);
+void roctracer_unload(void);
+void roctracer_flush_buf(void);
 
 // Set properties
 roctracer_status_t roctracer_set_properties(

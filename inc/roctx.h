@@ -44,12 +44,12 @@ extern "C" {
 
 ////////////////////////////////////////////////////////////////////////////////
 // Returning library version
-uint32_t roctx_version_major();
-uint32_t roctx_version_minor();
+uint32_t roctx_version_major(void);
+uint32_t roctx_version_minor(void);
 
 ////////////////////////////////////////////////////////////////////////////////
 // Returning the last error
-const char* roctracer_error_string();
+const char* roctracer_error_string(void);
 
 ////////////////////////////////////////////////////////////////////////////////
 // Markers annotating API
@@ -68,7 +68,7 @@ int roctxRangePushA(const char* message);
 
 // Marks the end of a nested range.
 // A negative value is returned on the error.
-int roctxRangePop();
+int roctxRangePop(void);
 
 // ROCTX range id type
 typedef uint64_t roctx_range_id_t;
